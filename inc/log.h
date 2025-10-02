@@ -11,7 +11,7 @@ enum LogThreshold {
 	WARNING,
 	ERROR,
 	FATAL,
-	LOG_THRESHOLD_DEFAULT = INFO,
+	LOG_THRESHOLD_DEFAULT = WARNING,
 };
 
 struct LogCapLine {
@@ -62,4 +62,3 @@ void log_cap_lines_free(struct SList **log_cap_lines);
 void log_cap_lines_playback(struct SList *log_cap_lines);
 
 #endif // LOG_H
-
