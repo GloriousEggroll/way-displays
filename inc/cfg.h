@@ -35,7 +35,7 @@ enum OnOff {
 	ON = 1,
 	OFF,
 	SCALING_DEFAULT = ON,
-	AUTO_SCALE_DEFAULT = ON,
+	AUTO_SCALE_DEFAULT = OFF,
 };
 
 struct UserMode {
