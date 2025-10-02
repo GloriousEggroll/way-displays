@@ -88,11 +88,7 @@ void socket_path(struct sockaddr_un *addr) {
 	size_t sun_path_size = sizeof(addr->sun_path);
 
 	char name[sun_path_size - 4];
-	if (getenv("XDG_VTNR")) {
-		snprintf(name, sizeof(name), "/way-displays.%s.sock", getenv("XDG_VTNR"));
-	} else {
 		snprintf(name, sizeof(name), "/way-displays.sock");
-	}
 
 	if (!getenv("XDG_RUNTIME_DIR") || strlen(name) + strlen(getenv("XDG_RUNTIME_DIR")) > sun_path_size) {
 		snprintf(addr->sun_path, sun_path_size, "/tmp%s", name);
@@ -159,4 +155,3 @@ int create_socket_client(void) {
 
 	return socket_client;
 }
-
